@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="form-dish">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `form-dish`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class FormDish extends Polymer.Element {
+      static get is() { return 'form-dish'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'form-dish'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(FormDish.is, FormDish);
+  </script>
+</dom-module>
