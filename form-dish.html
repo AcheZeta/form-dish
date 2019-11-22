@@ -14,9 +14,22 @@
         display: block;
       }
 
-      paper-input {
-        max-width: 400px;
-        margin: auto;
+      paper-card {
+        max-width: 500px;
+        border-color: var(--paper-grey-600);
+        border-style: solid;
+        margin: 2em;
+        padding: 1em;
+        border-radius: 5px;
+      }
+
+      input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid #757575;
       }
 
       iron-icon,
@@ -26,11 +39,14 @@
       }
     </style>
 
-    <paper-input></paper-input>
-    <paper-input>
-      <iron-icon></iron-icon>
-      <div slot="suffix">@email.com</div>
-    </paper-input>
+    <paper-card image="[[tacoExample]]">
+      <div class="Input">
+        <input type="text" placeholder="Tu nuevo taco Favorito">
+        <input type="text" placeholder="La imagen de tu taco favorito">
+        <input type="text" placeholder="Las calorias de tu taco favorito">
+        <input type="text" placeholder="Precio de tu taco favorito">
+      </div>
+    </paper-card>
   </template>
 
   <script>
@@ -48,9 +64,9 @@
       }
       static get properties() {
         return {
-          prop1: {
-            type: String,
-            value: 'form-dish'
+          tacoExample: {
+            type: Object,
+            value: 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?cs=srgb&dl=blur-close-up-dairy-product-376464.jpg&fm=jpg'
           }
         };
       }
