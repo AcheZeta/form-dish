@@ -15,7 +15,7 @@
       }
 
       paper-card {
-        max-width: 500px;
+        max-width: 35%;
         border-color: var(--paper-grey-600);
         border-style: solid;
         margin: 2em;
@@ -24,10 +24,10 @@
       }
 
       input {
-        font-size: 18px;
-        padding: 10px 10px 10px 5px;
+        font-size: 100%;
+        padding: 5%;
         display: block;
-        width: 300px;
+        width: 90%;
         border: none;
         border-bottom: 1px solid #757575;
       }
@@ -39,14 +39,23 @@
       }
     </style>
 
-    <paper-card image="[[tacoExample]]">
+    <paper-card image="[[taco]]">
       <div class="Input">
-        <input type="text" placeholder="Tu nuevo taco Favorito">
-        <input type="text" placeholder="La imagen de tu taco favorito">
-        <input type="text" placeholder="Las calorias de tu taco favorito">
-        <input type="text" placeholder="Precio de tu taco favorito">
+        <input type="text" placeholder="Tu nuevo taco Favorito">{{name}}</input>
+        <input type="text" placeholder="La imagen de tu taco favorito">{{image}}</input>
+        <input type="text" placeholder="Las calorias de tu taco favorito">{{cal}}</input>
+        <input type="text" placeholder="Precio de tu taco favorito">{{price}}</input>
       </div>
     </paper-card>
+    <paper-card image="[[taco]]">
+      <div class="Input">
+        <input type="text" placeholder="Tu nuevo taco Favorito">{{name}}</input>
+        <input type="text" placeholder="La imagen de tu taco favorito">{{image}}</input>
+        <input type="text" placeholder="Las calorias de tu taco favorito">{{cal}}</input>
+        <input type="text" placeholder="Precio de tu taco favorito">{{price}}</input>
+      </div>
+    </paper-card>
+
   </template>
 
   <script>
@@ -64,9 +73,20 @@
       }
       static get properties() {
         return {
-          tacoExample: {
+          taco: {
             type: Object,
-            value: 'https://pngimage.net/wp-content/uploads/2018/05/default-png-5.png'
+            value: {
+              id: 0,
+              image: 'https://www.harmonytoc.com/Content/img/offline/tool/audit/placeholder.png',
+              name: 'Taco',
+              energyValue: 586,
+              description: 'Every day is taco ipsum tuesday. Does guac cost extra? If you were a taco, would you eat yourself.',
+              price: 40
+            }
+          },
+          isEditable: {
+            type: Boolean,
+            value: false
           }
         };
       }
